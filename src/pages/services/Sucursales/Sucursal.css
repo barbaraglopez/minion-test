@@ -1,0 +1,8 @@
+.boton-mapa{
+    color: var(--primary-color-b);
+    background-color: var(--secondary-color-a);
+}
+
+.boton-mapa:hover{
+    box-shadow: 2px 2px 8px var(--primary-color-b);
+}

@@ -1,0 +1,30 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    height: 100%;
+    width: 100%;
+}
+
+.cardText{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50%;
+}
+
+.buttonsContainer{
+    display: flex;
+}
+
+.prompt-privado-box{
+    background-color: var(--secondary-color-b);
+}
+
+.prompt-privado-text{
+    color: var(--primary-color-a)
+}
+
+.boton-prompt:hover{
+    background-color: rgba(224, 229, 253, 1);
+}

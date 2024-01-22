@@ -1,0 +1,33 @@
+.backgroundDiv{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to top,rgba(69, 57, 198, 1), black);
+}
+
+.formContainer{
+    height: min-content;
+    width: min-content;
+}
+
+
+
+	@media (max-width: 650px) {
+        .formContainer {
+            width: 70%;
+        }
+
+        .labelContainer{
+            width: 100%;
+        }
+
+    .checkboxContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .rememberPasswordcontainer{
+        margin-bottom: 10px;
+    }
+
+    }

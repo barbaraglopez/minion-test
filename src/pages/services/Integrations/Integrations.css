@@ -1,0 +1,8 @@
+.integrations-sub-div{
+    background-color:rgba(239, 239, 239, 1);
+    height: 90%;
+    border-radius: 20px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+.sideBarContainer{
+    height: 100%;
+}
+
+.opciones{
+    background-color:rgba(220, 220, 220, 1);
+;
+}
+
+.elemento-sidebar:hover{
+    cursor: pointer;
+    color: var(--primary-color-b);
+}

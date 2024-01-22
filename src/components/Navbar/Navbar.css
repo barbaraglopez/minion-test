@@ -1,0 +1,10 @@
+.nav-container {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+}
+
+.nav_items.open{
+  display: block !important;
+}
+

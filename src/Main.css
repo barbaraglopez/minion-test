@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color-a: #4539C6;
+    --primary-color-b: #6250EB;
+    --primary-color-c: #6362EC;
+    --secondary-color-a: #C7CFFB;
+    --secondary-color-b: #E0E5FD;
+    --secondary-color-c: #EFF1FE;
+    --danger-color: #E40303;
+    --border-base: 1px solid;
+    --shadow-button-hover-base: -1px -1px 6px inset;
+    --shadow-hover-primary-buttoon:  var(--shadow-button-hover-base) var(--primary-color-b);
+    --shadow-hover-secondary-button: var(--shadow-button-hover-base) var(--danger-color);
+    --transition-hover-buttons: color 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body{
+    font-family: Gilroy, sans-serif;
+}
+
+.boton-small {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.boton-medium{
+    width: 9rem;
+    height: 2rem;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.boton-large{
+    width: 12.5rem;
+    height: 2.5rem;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.boton-small:hover {
+    cursor: pointer;
+}
+
+.boton-medium:hover {
+    cursor: pointer;
+}
+
+.boton-large:hover{
+    cursor: pointer;
+}
+
+.boton-primario{
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary-color-b);
+    border: var(--border-base) var(--primary-color-b);
+}
+
+.boton-secundario{
+    color: white;
+    font-weight: bold;
+    background-color: var(--danger-color);
+    border: var(--border-base) var(--danger-color);
+}
+
+.boton-atras{
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-color-b);
+    border-radius: 5px;
+    background-color: white;
+    font-size: 0.7rem;
+    color: var(--primary-color-b);
+    font-weight: bold;
+}
+
+.boton-primario:hover{
+    color: var(--primary-color-b);
+    border: var(--border-base) var(--primary-color-b);
+    background-color: white;
+    box-shadow: var(--shadow-hover-primary-buttoon);
+    transition: var(--transition-hover-buttons);
+}
+
+.boton-secundario:hover{
+    color: var(--danger-color);
+    border: var(--border-base) var(--danger-color);
+    background-color: white;
+    box-shadow: var(--shadow-hover-secondary-button);
+    transition: var(--transition-hover-buttons);
+}
+
+.homeContainer{
+    width: 100vw;
+}
+
+.bg-gris-claro{
+    background-color:rgba(239, 239, 239, 1)
+}
+
+.bg-gris-oscuro{
+    background-color: rgba(189, 189, 189, 1);
+}
+
+.bg-violeta-claro{
+    background-color: rgba(199, 207, 251, 1);
+}

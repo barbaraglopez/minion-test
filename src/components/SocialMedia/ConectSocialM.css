@@ -1,0 +1,28 @@
+.invisible {
+   display: none;
+ }
+ 
+ .visible {
+   display: block;
+ }
+
+ .input{
+   border: solid 1px rgb(163, 161, 161);
+   padding: 2px;
+   border-radius: 5px;
+ }
+
+ .container{
+  width: 500px;
+  height: 250px;
+ }
+
+ .container-qr-imagen{
+  width: 50%;
+  height: 100%;
+ }
+
+ .imagen{
+  width: 250px;
+  height: 250px;
+ }

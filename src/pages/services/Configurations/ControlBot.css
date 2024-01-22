@@ -1,0 +1,6 @@
+.boton-desactivado{
+   background-color: #bdc3c7;
+   color: #7f8c8d;
+   cursor: not-allowed;
+   opacity: 0.6;
+}

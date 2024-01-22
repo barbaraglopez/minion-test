@@ -1,0 +1,37 @@
+.switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.barra {
+    width: 2rem;
+    height: 1rem;
+    background-color: var(--secondary-color-b);
+    opacity: 0.8;
+    border-radius: 10px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.circulo {
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: var(--primary-color-a);
+    opacity: 0.5;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.switch.activado .barra {
+    background-color: var(--secondary-color-a);
+    opacity: 1;
+}
+
+.switch.activado .circulo {
+    background-color: var(--primary-color-b);
+    opacity: 1;
+    transform: translateX(1rem);
+}
