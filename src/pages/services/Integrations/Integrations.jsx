@@ -4,6 +4,8 @@ import { Sidebar } from "../../../components/Sidebar/Sidebar";
 import { Navbar } from "../../../components/Navbar/Navbar";
 import { BurguerNav } from "../../../components/BurguerNav/BurguerNav";
 import { SocialMedia } from "../../../components/SocialMedia/SocialMedia";
+import { SelectorModeloOpenAI } from "./SelectorModeloOpenAI";
+import { ConfigurarAPIKey } from "./ConfigurarAPIKey";
 
 export const Integrations = () => {
   const navigate = useNavigate();
@@ -32,24 +34,10 @@ export const Integrations = () => {
                 imagenWord={"../../../../img/Whatsapp_word.svg"}
               />
             </div>
-            {/* <div className="integrations-sub-div">
-              <SocialMedia
-                imagenIcon={"../../../../img/Facebook_Icon.svg"}
-                imagenWord={"../../../../img/Facebook_word.svg"}
-              />
+            <div className="grid grid-cols-2 bg-gris-claro p-10 max-lg:grid-cols-1">
+              <SelectorModeloOpenAI />
+              <ConfigurarAPIKey />
             </div>
-            <div className="integrations-sub-div">
-              <SocialMedia
-                imagenIcon={"../../../../img/Telegram_icon.svg"}
-                imagenWord={"../../../../img/Telegram_word.svg"}
-              />
-            </div>
-            <div className="integrations-sub-div">
-              <SocialMedia
-                imagenIcon={"../../../../img/Ig_icon.svg"}
-                imagenWord={"../../../../img/Instagram_word.svg"}
-              />
-            </div> */}
           </div>
         </div>
       </div>

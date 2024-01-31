@@ -91,7 +91,7 @@ export const ConfigurarAPIKey = () => {
    }
 
    return (
-      <div className="flex flex-col">
+      <div className="flex flex-col p-5">
          <Modal
             handleBotonModal={cerrarModal}
             handleCerrar={cerrarModal}

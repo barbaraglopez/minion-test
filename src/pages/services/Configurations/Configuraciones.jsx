@@ -22,22 +22,16 @@ export const Configuraciones = () => {
             displayButton={"hidden"}
             displayButtonAtras={"hidden"}
           />
-          <div className="grid grid-cols-2 containerDiv gap-5 mb-10 max-md:grid-cols-1 max-md:gap-2 max-md:mb-0 max-lg:h-auto max-lg:mb-5">
+          <div className="grid grid-cols-1 containerDiv gap-5 mb-10 max-md:grid-cols-1 max-md:gap-2 max-md:mb-0 max-lg:h-auto max-lg:mb-5">
             <div className="bg-gris-claro rounded-md p-5 max-lg:h-auto ">
               <ParametrosBot />
             </div>
-            <div className="bg-gris-claro rounded-md p-5 max-lg:h-auto max-lg:mb-5">
-              <SelectorModeloOpenAI />
-            </div>
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-9 max-md:grid-cols-1 max-md:gap-2 max-lg:mt-5">
+          <div className="grid grid-cols-2 gap-5 mt-9 max-md:grid-cols-1 max-md:gap-2 max-lg:mt-5">
             <div className="bg-gris-claro containerDivs h-72 rounded-md max-lg:h-auto max-lg:mb-5 max-lg:mt-5">         <EstadoBot />
             </div>
             <div className="bg-gris-claro containerDivs h-72 rounded-md max-lg:h-auto max-lg:mb-5">
               <ControlBot />
-            </div>
-            <div className="bg-gris-claro containerDivs h-72 rounded-md max-lg:h-auto max-lg:mb-5">
-              <ConfigurarAPIKey />
             </div>
           </div>
         </div>
