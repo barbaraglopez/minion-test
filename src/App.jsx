@@ -1,16 +1,16 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { ChatsWhatsApp } from "./pages/services/ChatsWhatsApp/ChatsWhatsApp.jsx";
-import { AppProvider } from "./context/useContext";
-import { Login } from "./pages/auth/Login/Login";
+import { AppProvider } from "./context/useContext.jsx";
+import { Login } from "./pages/auth/Login/Login.jsx";
 import { Sucursales } from "./pages/services/Sucursales/Sucursales.jsx";
 import { Prompts} from "./pages/services/Prompt/Prompts.jsx";
 import { AgregarPrompt } from "./pages/services/Prompt/AgregarPrompt.jsx";
 import { EditarPrompt } from "./pages/services/Prompt/EditarPrompt.jsx";
 import { EditarSucursal } from "./pages/services/Sucursales/EditarSucursal.jsx";
 import { Configuraciones } from "./pages/services/Configurations/Configuraciones.jsx";
-import { Integrations } from "./pages/services/Integrations/Integrations";
-import { ConectSocialM } from "./components/SocialMedia/ConectSocialM";
-import { AddIntegration } from "./pages/services/Integrations/AddIntegration";
+import { Integrations } from "./pages/services/Integrations/Integrations.jsx";
+import { ConectSocialM } from "./components/SocialMedia/ConectSocialM.jsx";
+import { AddIntegration } from "./pages/services/Integrations/AddIntegration.jsx";
 import { AgregarSucursal } from "./pages/services/Sucursales/AgregarSucursal.jsx";
 import {Parameters} from './pages/services/Parameters/Parameters.jsx'
 
@@ -19,7 +19,7 @@ function App() {
     <main className="max-h-full flex flex-col">
       <AppProvider>
         <Routes>
-          <Route path="/" element={<Login />} />
+          {/*Ingreso de usuario*/}
           <Route path="/chatswhatsapp" element={<ChatsWhatsApp />} />
           <Route path="/login" element={<Login />} />
 
@@ -43,8 +43,6 @@ function App() {
           <Route path="/integraciones" element={<Integrations />} />
           <Route path="/addintegrations" element={<AddIntegration />} />
           <Route path="/conectsocialmedia" element={<ConectSocialM />} />
-
-          {/* <Route path="/messages" element={< Messages />} /> */}
         </Routes>
       </AppProvider>
     </main>

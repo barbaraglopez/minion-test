@@ -3,10 +3,8 @@ import { Sidebar } from "../../../components/Sidebar/Sidebar";
 import { BurguerNav } from "../../../components/BurguerNav/BurguerNav";
 import { Navbar } from "../../../components/Navbar/Navbar";
 import {ParametrosBot} from "./ParametrosBot.jsx";
-import {SelectorModeloOpenAI} from "./SelectorModeloOpenAI.jsx";
 import {EstadoBot} from "./EstadoBot.jsx";
 import {ControlBot} from "./ControlBot.jsx";
-import {ConfigurarAPIKey} from "./ConfigurarAPIKey.jsx";
 
 export const Configuraciones = () => {
 

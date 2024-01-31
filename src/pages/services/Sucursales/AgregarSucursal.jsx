@@ -1,87 +1,105 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 import { Sidebar } from "../../../components/Sidebar/Sidebar.jsx";
 import { Navbar } from "../../../components/Navbar/Navbar.jsx";
 import { Modal } from "../../../components/Modales/Modal.jsx";
-import axios from "axios";
 
-export const AgregarSucursal = () =>{
-  const BASE_URL = "https://bot.yappastore.com"
-	const navigate = useNavigate();
-  const [ anyInputChanges, setAnyInputChanges ] = useState(false)
-  const [ modalOpen, setModalOpen ] = useState(false);
-  const [ modalObjetos, setModalObjetos ] = useState({
+export const AgregarSucursal = () => {
+  const BASE_URL = "https://bot.yappastore.com";
+  const navigate = useNavigate();
+  const [anyInputChanges, setAnyInputChanges] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  /* Funcion para guardar la informacion de una modal */
+  const [modalObjetos, setModalObjetos] = useState({
     icono: null,
-    texto: null
-  })
-	const [ sucursal , setSucursal ] = useState({
-		nombre: null,
+    texto: null,
+  });
+
+  /* Funcion para guardar la informacion de una sucursal */
+  const [sucursal, setSucursal] = useState({
+    nombre: null,
     latitud: null,
     longitud: null,
     direccion: null,
     telefono: null,
     foto: "default",
-    comentarios: ["default"]
-	})
+    comentarios: ["default"],
+  });
 
+  /* Funcion para guardar la informacion de una sucursal exitosa*/
   const modalExitosa = {
     icono: "../../../img/Modal_icono_ok.svg",
-    texto: "Sucursal creada con éxito"
-  }
+    texto: "Sucursal creada con éxito",
+  };
 
+  /* Funcion para guardar la informacion de una modal error */
   const modalError = {
     icono: "../../../img/Modal_icono_warning.svg",
-    texto: "Error al crear la sucursal"
-  }
+    texto: "Error al crear la sucursal",
+  };
 
-	const handleReturn = () => {
-		navigate("/sucursales")
-	}
+  /* Funcion para navegar a sucursales */
+  const handleReturn = () => {
+    navigate("/sucursales");
+  };
 
-  const abrirModal = (objetos) =>{
+  /* Funcion para guardar la informacion de una modal */
+  const abrirModal = (objetos) => {
     setModalObjetos({
-      ...objetos
-    })
+      ...objetos,
+    });
     setModalOpen(true);
-  }
+  };
 
-	const cerrarModal = () =>{
-		setModalOpen(false);
-	}
+  /* Funcion para cerrar modal */
+  const cerrarModal = () => {
+    setModalOpen(false);
+  };
 
-	const handleChange = (e) => {
-		setSucursal({
-			...sucursal,
-			[e.target.name] : e.target.value
-		})
+  /* Funcion para guardar la informacion dque ingresa el usuario en el input */
+  const handleChange = (e) => {
+    setSucursal({
+      ...sucursal,
+      [e.target.name]: e.target.value,
+    });
     setAnyInputChanges(true);
-	}
+  };
 
+  /* Funcion para enviar la informacion de la nueva sucursal a la API */
   const handleGuardarSucursal = () => {
-    if(!anyInputChanges){
+    if (!anyInputChanges) {
       let obj = {
         icono: "../../../img/Modal_icono_warning.svg",
-        texto: "Los campos no han sido modificados"
-      }
-      abrirModal(obj)
-    }else if(sucursal.nombre != null && sucursal.latitud != null && sucursal.longitud != null && sucursal.direccion != null && sucursal.telefono != null && sucursal.comentarios != null){
-      axios.post(`${BASE_URL}/branches`, sucursal)
-        .then(response => {
+        texto: "Los campos no han sido modificados",
+      };
+      abrirModal(obj);
+    } else if (
+      sucursal.nombre != null &&
+      sucursal.latitud != null &&
+      sucursal.longitud != null &&
+      sucursal.direccion != null &&
+      sucursal.telefono != null &&
+      sucursal.comentarios != null
+    ) {
+      axios
+        .post(`${BASE_URL}/branches`, sucursal)
+        .then((response) => {
           abrirModal(modalExitosa);
         })
-        .catch(error => {
-          abrirModal(modalError)
+        .catch((error) => {
+          abrirModal(modalError);
         });
-    }else{
+    } else {
       let obj = {
         icono: "../../../img/Modal_icono_warning.svg",
-        texto: "Los campos deben estar completos"
-      }
-      abrirModal(obj)
+        texto: "Los campos deben estar completos",
+      };
+      abrirModal(obj);
     }
   };
 
-	return (
+  return (
     <div className="homeContainer flex items-stretch">
       <Modal
         handleBotonModal={handleReturn}
@@ -199,4 +217,4 @@ export const AgregarSucursal = () =>{
       </div>
     </div>
   );
-}
+};

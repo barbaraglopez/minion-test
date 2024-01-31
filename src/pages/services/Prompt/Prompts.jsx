@@ -5,7 +5,7 @@ import { Prompt } from "./Prompt.jsx";
 import { BurguerNav } from "../../../components/BurguerNav/BurguerNav";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Modal } from '../../../components/Modales/Modal.jsx'
+import { Modal } from "../../../components/Modales/Modal.jsx";
 
 export const Prompts = () => {
   const navigate = useNavigate();
@@ -14,88 +14,81 @@ export const Prompts = () => {
   const [search, setSearch] = useState("");
   const [idPromptaBorrar, setidPromptaBorrar] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
-  const [promptPrivado, setPromptPrivado] = useState()
-  const [promptPublico, setPromptPublico] = useState()
+  const [promptPrivado, setPromptPrivado] = useState();
+  const [promptPublico, setPromptPublico] = useState();
   const [modalObjetos, setModalObjetos] = useState({
     icono: null,
-    texto: null
-  })
-  const [modalPrivacidadPrompts, setModalPrivacidadPrompts] = useState(false)
-  const [mensajeModal, setMensajeModal] = useState("")
+    texto: null,
+  });
+  const [modalPrivacidadPrompts, setModalPrivacidadPrompts] = useState(false);
+  const [mensajeModal, setMensajeModal] = useState("");
 
   const abrirModal = (objetos) => {
     setModalObjetos({
-      ...objetos
-    })
+      ...objetos,
+    });
     setModalOpen(true);
-  }
+  };
 
   const cerrarModal = () => {
     setModalOpen(false);
-  }
-
-  const modalExitosa = {
-    icono: "../../../img/Modal_icono_ok.svg",
-    texto: "Cambios guardados con éxito"
-  }
-
-  const modalError = {
-    icono: "../../../img/Modal_icono_warning.svg",
-    texto: "Error al editar el prompt"
-  }
+  };
 
   const modalPregunta = {
     icono: "../../../../img/Danger.svg",
-    texto: "¿Seguro que deseas eliminar este prompt?"
-  }
+    texto: "¿Seguro que deseas eliminar este prompt?",
+  };
 
   useEffect(() => {
     fetchPrompts();
-    fetchPromptPrivadoyPublico()
+    fetchPromptPrivadoyPublico();
   }, []);
 
   const fetchPrompts = () => {
-    axios.get(`${BASE_URL}/promptsraw`)
-      .then(response => {
-        setPrompts(response.data)
+    axios
+      .get(`${BASE_URL}/promptsraw`)
+      .then((response) => {
+        setPrompts(response.data);
       })
-      .catch(error => console.error('Error al traer los prompts:  ', error));
-  }
+      .catch((error) => console.error("Error al traer los prompts:  ", error));
+  };
 
-  const fetchPromptPrivadoyPublico=()=>{
+  const fetchPromptPrivadoyPublico = () => {
     axios
       .get(`${BASE_URL}/config`)
       .then((response) => {
         setPromptPrivado(response.data.PROMPT_PRIVADO);
         setPromptPublico(response.data.PROMPT);
       })
-      .catch((error) => console.error("Error al traer la data:  ", error)); 
-  }  
+      .catch((error) => console.error("Error al traer la data:  ", error));
+  };
 
   const handleAgregar = () => {
     navigate("/agregar-prompt");
-  }
+  };
 
   const handleBorrar = (idPrompt) => {
-    abrirModal(modalPregunta)
-    setidPromptaBorrar(idPrompt)
-  }
+    abrirModal(modalPregunta);
+    setidPromptaBorrar(idPrompt);
+  };
 
   const handleModal = () => {
-    axios.delete(`${BASE_URL}/prompts/${idPromptaBorrar}`)
-      .then(response => {
-        cerrarModal()
-        setidPromptaBorrar("")
+    axios
+      .delete(`${BASE_URL}/prompts/${idPromptaBorrar}`)
+      .then((response) => {
+        cerrarModal();
+        setidPromptaBorrar("");
         fetchPrompts();
       })
-      .catch(error => console.log('Error al borrar prompt: ' + idPromptaBorrar, error))
-  }
+      .catch((error) =>
+        console.log("Error al borrar prompt: " + idPromptaBorrar, error)
+      );
+  };
 
   const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
+    setSearch(e.target.value);
+  };
 
-  
   useEffect(() => {
     if (search !== null && search !== "") {
       const lowerCaseSearch = search.toLowerCase();
@@ -110,42 +103,42 @@ export const Prompts = () => {
   }, [search]);
 
   const handleElegidoPublico = (name) => {
-       axios
-         .post(`${BASE_URL}/config`, {
-           key: "PROMPT",
-           value: name,
-         })
-         .then((response) => {
-           setMensajeModal("Operacion realizada con exito");;
-         })
-         .catch((error) => {
-           setMensajeModal("Hubo un problema:"+error);
-         });
-         
-        setModalPrivacidadPrompts(true);
-};
+    axios
+      .post(`${BASE_URL}/config`, {
+        key: "PROMPT",
+        value: name,
+      })
+      .then((response) => {
+        setMensajeModal("Operacion realizada con exito");
+      })
+      .catch((error) => {
+        setMensajeModal("Hubo un problema:" + error);
+      });
 
-  const handleElegidoPrivado = (name) => {
-      axios
-        .post(`${BASE_URL}/config`, {
-          key: "PROMPT_PRIVADO",
-          value: name
-        })
-        .then((response) => {
-          setMensajeModal("Operacion realizada con exito");
-        })
-        .catch((error) => {
-          setMensajeModal("Hubo un problema:" + error);
-        });
-         
-        setModalPrivacidadPrompts(true)
+    setModalPrivacidadPrompts(true);
   };
 
-        const confirmar =()=>{
-            window.location.reload();
-            setModalPrivacidadPrompts(false);
-            setMensajeModal("");
-        }
+  const handleElegidoPrivado = (name) => {
+    axios
+      .post(`${BASE_URL}/config`, {
+        key: "PROMPT_PRIVADO",
+        value: name,
+      })
+      .then((response) => {
+        setMensajeModal("Operacion realizada con exito");
+      })
+      .catch((error) => {
+        setMensajeModal("Hubo un problema:" + error);
+      });
+
+    setModalPrivacidadPrompts(true);
+  };
+
+  const confirmar = () => {
+    window.location.reload();
+    setModalPrivacidadPrompts(false);
+    setMensajeModal("");
+  };
 
   return (
     <>

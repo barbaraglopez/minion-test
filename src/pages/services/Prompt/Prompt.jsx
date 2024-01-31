@@ -1,11 +1,5 @@
 import "./Prompt.css";
 import { useNavigate } from "react-router-dom";
-import Switch from "./Switch.jsx";
-import { useState } from "react";
-import {
-  useEffect
-} from "react";
-import { useAuth } from "../../../context/useContext";
 
 export const Prompt = ({
   prompt,
