@@ -12,6 +12,7 @@ import { Integrations } from "./pages/services/Integrations/Integrations";
 import { ConectSocialM } from "./components/SocialMedia/ConectSocialM";
 import { AddIntegration } from "./pages/services/Integrations/AddIntegration";
 import { AgregarSucursal } from "./pages/services/Sucursales/AgregarSucursal.jsx";
+import {Parameters} from './pages/services/Parameters/Parameters.jsx'
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
 
           {/*Configuraciones*/}
           <Route path="/home" element={<Configuraciones />} />
+
+          {/*Parametros*/}
+          <Route path="/parametros" element={<Parameters />} />
 
           {/*Integraciones*/}
           <Route path="/integraciones" element={<Integrations />} />

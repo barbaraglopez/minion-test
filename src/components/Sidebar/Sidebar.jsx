@@ -33,6 +33,11 @@ export const Sidebar = () => {
         url: "/integraciones",
         icon: "/img/Vector.svg",
       },
+      {
+        title: "Parametros",
+        url: "/parametros",
+        icon: "/img/Settings.svg",
+      },
     ];
 
   return (

@@ -1,0 +1,22 @@
+.item{
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.input{
+    border: 1px solid black;
+}
+
+.input:hover{
+    cursor: pointer;
+}
+

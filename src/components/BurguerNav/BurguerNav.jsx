@@ -6,11 +6,11 @@ export const BurguerNav = () => {
   const navigate = useNavigate();
 
    const Menus = [
-    {
-      title: "Home",
-      url: "/home",
-      icon: "/img/Settings.svg",
-    },
+     {
+       title: "Home",
+       url: "/home",
+       icon: "/img/Settings.svg",
+     },
      {
        title: "Chats",
        url: "/chatswhatsapp",
@@ -32,10 +32,15 @@ export const BurguerNav = () => {
        icon: "/img/Vector.svg",
      },
      {
-      title: "Cerrar sesion",
-      url: "/login",
-      icon: "/img/Logout.svg",
-    },
+       title: "Cerrar sesion",
+       url: "/login",
+       icon: "/img/Logout.svg",
+     },
+     {
+       title: "Parametros",
+       url: "/parametros",
+       icon: "/img/Settings.svg",
+     },
    ];
 
   return (
