@@ -21,6 +21,7 @@ function App() {
         <Routes>
           {/*Ingreso de usuario*/}
           <Route path="/chatswhatsapp" element={<ChatsWhatsApp />} />
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
 
           {/*Prompts*/}
