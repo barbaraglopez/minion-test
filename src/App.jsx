@@ -13,6 +13,7 @@ import { ConectSocialM } from "./components/SocialMedia/ConectSocialM.jsx";
 import { AddIntegration } from "./pages/services/Integrations/AddIntegration.jsx";
 import { AgregarSucursal } from "./pages/services/Sucursales/AgregarSucursal.jsx";
 import {Parameters} from './pages/services/Parameters/Parameters.jsx'
+import {OpenAI} from "./pages/services/Integrations/OpenAI/OpenAI.jsx"
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/integraciones" element={<Integrations />} />
           <Route path="/addintegrations" element={<AddIntegration />} />
           <Route path="/conectsocialmedia" element={<ConectSocialM />} />
+          <Route path="/openAI" element={<OpenAI />} />
         </Routes>
       </AppProvider>
     </main>

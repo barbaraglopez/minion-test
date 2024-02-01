@@ -1,17 +1,19 @@
-import "./Integrations.css"
-import {useNavigate } from "react-router-dom";
+import "./Integrations.css";
+import { useNavigate } from "react-router-dom";
 import { Sidebar } from "../../../components/Sidebar/Sidebar";
 import { Navbar } from "../../../components/Navbar/Navbar";
 import { BurguerNav } from "../../../components/BurguerNav/BurguerNav";
 import { SocialMedia } from "../../../components/SocialMedia/SocialMedia";
-import { SelectorModeloOpenAI } from "./SelectorModeloOpenAI";
-import { ConfigurarAPIKey } from "./ConfigurarAPIKey";
 
 export const Integrations = () => {
   const navigate = useNavigate();
 
-  const handleReturn = () => {
+  const handleReturn = (param) => {
     navigate("/integraciones");
+  };
+
+  const accessToOpenAI = () => {
+    navigate("/openAI");
   };
 
   return (
@@ -34,9 +36,14 @@ export const Integrations = () => {
                 imagenWord={"../../../../img/Whatsapp_word.svg"}
               />
             </div>
-            <div className="grid grid-cols-2 bg-gris-claro p-10 max-lg:grid-cols-1">
-              <SelectorModeloOpenAI />
-              <ConfigurarAPIKey />
+            <div className="grid grid-cols-2 gap-40 bg-gris-claro rounded-lg items-center p-4">
+              Opanai
+              <button
+                onClick={() => accessToOpenAI()}
+                className="boton-large boton-primario button-socialmedia max-sm:h-7"
+              >
+                Acceder
+              </button>
             </div>
           </div>
         </div>
