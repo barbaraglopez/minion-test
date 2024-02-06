@@ -36,8 +36,11 @@ export const Integrations = () => {
                 imagenWord={"../../../../img/Whatsapp_word.svg"}
               />
             </div>
-            <div className="grid grid-cols-2 gap-40 bg-gris-claro rounded-lg items-center p-4">
-              Opanai
+            <div className="integrations-sub-div">
+              <img
+                src="../../../../img/openai.png"
+                className="ml-4 max-sm:h-10 h-9"
+              />
               <button
                 onClick={() => accessToOpenAI()}
                 className="boton-large boton-primario button-socialmedia max-sm:h-7"
