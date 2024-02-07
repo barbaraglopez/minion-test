@@ -2,13 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const EstadoBot = () => {
+  const BASE_URL = "https://bot.yappastore.com";
+
   const [estadoBot, setEstadoBot] = useState({
     appUptime: null,
     whatsappConnectionStatus: null,
     whatsappUptime: null,
   });
-
-  const BASE_URL = "https://bot.yappastore.com";
 
   useEffect(() => {
     const fetchEstadoDelBot = async () => {
@@ -19,7 +19,6 @@ export const EstadoBot = () => {
         console.error("Error al traer el estado del bot: ", error);
       }
     };
-
     fetchEstadoDelBot();
   }, []);
 
