@@ -25,7 +25,12 @@
 }
 
 @font-face {
-    font-family: 'Gilroy';
+  font-family: 'GilroySemibold';
+  src: url('../fonts/Gilroy-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GilroyBold';
     src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
@@ -33,6 +38,10 @@
 
 body{
     font-family: Gilroy, sans-serif;
+}
+
+title{
+    font-family:GilroySemibold
 }
 
 .boton-small {

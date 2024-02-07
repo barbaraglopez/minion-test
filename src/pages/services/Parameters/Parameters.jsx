@@ -147,7 +147,7 @@ export const Parameters = () => {
       )}
       <div className="container p-5">
         <Navbar
-          imagen={"../../../../img/Integraciones.svg"}
+          imagen={"../../../../img/parametros-title.PNG"}
           displayInput={"hidden"}
           displayButton={"hidden"}
           nombre={"Sara Hebe"}

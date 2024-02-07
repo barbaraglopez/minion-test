@@ -27,7 +27,9 @@ export const EstadoBot = () =>{
       <>
         <div className="flex flex-col justify-center">
           <div className="container flex flex-col items-center mt-5">
-            <p>Estado de las integraciones</p>
+            <p className="font-extrabold p-2 text-2xl max-lg:text-xl">
+              Estado de las integraciones
+            </p>
             <div className="">{`Estado de coneccion : ${estadoBot.whatsappConnectionStatus}`}</div>
             <div className="">{`Tiempo desconectado: ${estadoBot.appUptime}`}</div>
             <div className="">{`Tiempo de coneccion: ${estadoBot.whatsappUptime}`}</div>
