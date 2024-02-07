@@ -68,7 +68,7 @@ export const Login = () => {
                   onChange={handleChange}
                   placeholder="  negocio@info.com"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ export const Login = () => {
                   Contraseña
                 </label>
               </div>
-              <div className="mt-2">
+              <div className="mt-2 mr-3">
                 <input
                   id="password"
                   name="password"
@@ -91,7 +91,7 @@ export const Login = () => {
                   autoComplete="current-password"
                   onChange={handleChange}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ export const Login = () => {
               <div className="checkboxContainer text-sm flex justify-between ">
                 <div className="mb-2">
                   <input
-                    className="mr-1"
+                    className="mr-4"
                     type="checkbox"
                     name="my-checkbox"
                     id="opt-in"
