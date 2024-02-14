@@ -19,7 +19,7 @@ export const Integrations = () => {
   return (
     <>
       <BurguerNav />
-      <div className="max-md:align-middle flex items-stretch max-lg:flex-col">
+      <div className="containerHome max-md:align-middle flex items-stretch max-lg:flex-col">
         <Sidebar />
         <div className="lg:container p-5 flex-col">
           <Navbar

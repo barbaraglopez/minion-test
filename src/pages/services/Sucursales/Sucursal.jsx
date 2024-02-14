@@ -1,7 +1,8 @@
+// En Sucursal.jsx
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Sucursal.css";
 
-export const Sucursal = ({sucursal, funcionBorrar}) => {
+export const Sucursal = ({ sucursal, funcionBorrar, isCompact }) => {
   const navigate = useNavigate();
 
   /* Funcion para enviar la informacion de sucursal */
@@ -10,32 +11,72 @@ export const Sucursal = ({sucursal, funcionBorrar}) => {
   };
 
   return (
-    <div className="grid grid-cols-8 h-14">
-      <div className="column-nom w-40">{sucursal.nombre}</div>
-      <div className="column-lat w-40">{sucursal.latitud}</div>
-      <div className="column-lon w-40">{sucursal.longitud}</div>
-      <div className="column-dir w-32">{sucursal.direccion}</div>
-      <div className="column-tel w-32">{sucursal.telefono}</div>
-      <div className="column-ger w-40">Gerente</div>
-      <div className="column-map w-48">
-        <button className="boton-medium boton-mapa">Ver Mapa</button>
-      </div>
-      <div className="column-acc w-48 max-xl:w-20">
-        <div className="action-buttons flex gap-2">
-          <button
-            onClick={() => handelClick()}
-            className="boton-small boton-primario w-20"
-          >
-            Editar
-          </button>
-          <button
-            onClick={() => funcionBorrar(sucursal._id)}
-            className="boton-small boton-secundario"
-          >
-            Borrar
-          </button>
+    <>
+      {isCompact ? (
+        <div className="bg-white rounded-lg shadow-md p-4">
+          <p>
+            <strong>Nombre:</strong> {sucursal.nombre}
+          </p>
+          <p>
+            <strong>Latitud:</strong> {sucursal.latitud}
+          </p>
+          <p>
+            <strong>Longitud:</strong> {sucursal.longitud}
+          </p>
+          <p>
+            <strong>Dirección:</strong> {sucursal.direccion}
+          </p>
+          <p>
+            <strong>Teléfono:</strong> {sucursal.telefono}
+          </p>
+          <p>
+            <strong>Gerente:</strong> Gerente
+          </p>
+          <button className="boton-medium boton-mapa mt-2">Ver Mapa</button>
+          <div className="action-buttons flex gap-2 mt-2">
+            <button
+              onClick={() => handelClick()}
+              className="boton-small boton-primario w-20"
+            >
+              Editar
+            </button>
+            <button
+              onClick={() => funcionBorrar(sucursal._id)}
+              className="boton-small boton-secundario"
+            >
+              Borrar
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap">{sucursal.nombre}</td>
+          <td className="px-6 py-4 whitespace-nowrap">{sucursal.latitud}</td>
+          <td className="px-6 py-4 whitespace-nowrap">{sucursal.longitud}</td>
+          <td className="px-6 py-4 whitespace-nowrap">{sucursal.direccion}</td>
+          <td className="px-6 py-4 whitespace-nowrap">{sucursal.telefono}</td>
+          <td className="px-6 py-4 whitespace-nowrap">Gerente</td>
+          <td className="px-6 py-4 whitespace-nowrap">
+            <button className="boton-medium boton-mapa">Ver Mapa</button>
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap">
+            <div className="action-buttons flex gap-2">
+              <button
+                onClick={() => handelClick()}
+                className="boton-small boton-primario w-20"
+              >
+                Editar
+              </button>
+              <button
+                onClick={() => funcionBorrar(sucursal._id)}
+                className="boton-small boton-secundario"
+              >
+                Borrar
+              </button>
+            </div>
+          </td>
+        </tr>
+      )}
+    </>
   );
-}
+};

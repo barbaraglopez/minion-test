@@ -2,7 +2,7 @@ import "./Navbar.css";
 
 export const Navbar = ({imagen, displayButton, displayInput, funcionButton, nombre, eventoFuncion, displayButtonAtras, funcionButtonAtras, funcionSearchBar}) =>{
   return (
-    <div className="w-full h-30 flex items-center justify-between p-10 max-md:p-3 ">
+    <div className="w-full h-30 flex items-center justify-between p-10 max-md:p-3">
       <div className="flex items-center">
         <div className={`${displayButtonAtras} w-5 h-5`}>
           <button onClick={() => funcionButtonAtras()} className="boton-atras">
@@ -24,7 +24,7 @@ export const Navbar = ({imagen, displayButton, displayInput, funcionButton, nomb
         </div>
         <button
           onClick={() => eventoFuncion()}
-          className={`boton-large boton-primario h-min mr-5 ${displayButton} text-sm p-2 font-bold text-zinc-200 max-sm:w-36 max-sm:p-0 max-sm:font-normal`}
+          className={`boton-large boton-primario h-min mr-5 ${displayButton} text-sm p-2 font-bold text-zinc-200 max-sm:w-36 max-sm:p-0 max-sm:font-normal max-sm:w-24`}
         >
           {funcionButton}
         </button>

@@ -41,7 +41,7 @@ export const Sidebar = () => {
     ];
 
   return (
-    <div className="flex flex-col w-60 bg-gris-claro justify-between max-lg:hidden">
+    <div className="flex flex-col bg-gris-claro justify-between max-lg:hidden">
       <ul className="flex flex-col gap-5 m-5 ">
         <img src="../../../img/Icono_minion_app.svg" className="p-5" />
           {

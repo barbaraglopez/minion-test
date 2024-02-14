@@ -118,12 +118,6 @@ title{
     transition: var(--transition-hover-buttons);
 }
 
-.homeContainer{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
 .containerHome{
     height: 100vh;
 }

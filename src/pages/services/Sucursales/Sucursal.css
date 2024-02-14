@@ -6,3 +6,27 @@
 .boton-mapa:hover{
     box-shadow: 2px 2px 8px var(--primary-color-b);
 }
+
+
+/* Modificar el tamaño de las columnas para dispositivos móviles */
+@media (max-width: 1410px) {
+  .column-nom,
+  .column-lat,
+  .column-lon,
+  .column-dir,
+  .column-tel,
+  .column-ger,
+  .column-map,
+  .column-acc {
+    width: auto;
+    padding: 0.5rem; /* Ajustar el padding para dispositivos móviles */
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 1010px) {
+  .grid-cols-8 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Cambiar a una sola columna */
+  }
+}

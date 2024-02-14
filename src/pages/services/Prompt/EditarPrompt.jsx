@@ -122,7 +122,7 @@ export const EditarPrompt = () => {
           isOpen={modalOpen}
         />
         <Sidebar />
-        <div className="p-5 lg:container flex flex-col">
+        <div className="containerHome p-5 lg:container flex flex-col">
           <Navbar
             imagen={"../../../../img/Prompts.svg"}
             displayInput={"hidden"}

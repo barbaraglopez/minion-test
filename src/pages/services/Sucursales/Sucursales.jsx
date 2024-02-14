@@ -1,3 +1,4 @@
+// En Sucursales.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -58,42 +59,47 @@ export const Sucursales = () => {
             eventoFuncion={handleAgregar}
           />
           <div className="main-container pl-10 overflow-x-scroll">
-            <div className="my-cols column-titles grid grid-cols-8 mb-8">
-              <div className="column-nom w-40 max-xl:w-20">
-                <b>Nombre</b>
+            {sucursales && (
+              <div className="grid grid-cols-1 lg:flex flex-col gap-4">
+                <div className="hidden lg:block">
+                  <div className="overflow-x-auto">
+                    <table className="w-full table-auto">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Latitud</th>
+                          <th>Longitud</th>
+                          <th>Dirección</th>
+                          <th>Teléfono</th>
+                          <th>Gerente</th>
+                          <th>Mapa</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {sucursales.map((suc, key) => (
+                          <Sucursal
+                            key={key}
+                            sucursal={suc}
+                            funcionBorrar={handleBorrar}
+                          />
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="lg:hidden">
+                  {sucursales.map((suc, key) => (
+                    <Sucursal
+                      key={key}
+                      sucursal={suc}
+                      funcionBorrar={handleBorrar}
+                      isCompact={true}
+                    />
+                  ))}
+                </div>
               </div>
-              <div className="column-lat w-40 max-xl:w-20">
-                <b>Latitud</b>
-              </div>
-              <div className="column-lon w-40 max-xl:w-20">
-                <b>Longitud</b>
-              </div>
-              <div className="column-dir w-32 max-xl:w-20">
-                <b>Dirección</b>
-              </div>
-              <div className="column-tel w-32 max-xl:w-20">
-                <b>Teléfono</b>
-              </div>
-              <div className="column-ger w-40 max-xl:w-20">
-                <b>Gerente</b>
-              </div>
-              <div className="column-map w-48 max-xl:w-20">
-                <b>Mapa</b>
-              </div>
-              <div className="column-acc w-48max-xl:w-20 ">
-                <b>Acciones</b>
-              </div>
-            </div>
-            <div className="column-elements">
-              {sucursales &&
-                sucursales.map((suc, key) => (
-                  <Sucursal
-                    key={key}
-                    sucursal={suc}
-                    funcionBorrar={handleBorrar}
-                  />
-                ))}
-            </div>
+            )}
           </div>
         </div>
       </div>

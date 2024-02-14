@@ -153,8 +153,8 @@ export const Parameters = () => {
           nombre={"Sara Hebe"}
           displayButtonAtras={"hidden"}
         />
-        <div className="containerInfo h-full w-full p-3">
-          <div className="bg-white p-6 h-full">
+        <div className="containerInfo h-full w-full p-3 max-sm:p-0">
+          <div className="bg-white p-6 h-full max-sm:p-0">
             <div className="item bg-gris-claro">
               {`Bot home : ${info.BOT_HOME}`}
               <button
