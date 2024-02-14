@@ -109,7 +109,7 @@ export const Parameters = () => {
 
   return (
     <div className="max-md:align-middle flex items-stretch max-lg:flex-col containerHome">
-      <Sidebar />
+      <Sidebar/>
       <BurguerNav />
       {modalPrivacidadPrompts ? (
         <div className=" modal-bg w-full h-full flex items-center justify-center">
@@ -145,7 +145,7 @@ export const Parameters = () => {
       ) : (
         <></>
       )}
-      <div className="containerHome container-div">
+      <div className="container-div">
         <Navbar
           imagen={"../../../../img/parametros-title.PNG"}
           displayInput={"hidden"}
@@ -153,7 +153,7 @@ export const Parameters = () => {
           nombre={"Sara Hebe"}
           displayButtonAtras={"hidden"}
         />
-        <div className="containerInfo h-full w-full p-3 max-sm:p-0">
+        <div className="w-full p-3 max-xl:p-0">
           <div className="bg-white p-6 h-full max-sm:p-0">
             <div className="item bg-gris-claro">
               {`Bot home : ${info.BOT_HOME}`}

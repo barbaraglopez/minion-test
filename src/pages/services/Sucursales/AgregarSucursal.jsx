@@ -122,7 +122,7 @@ export const AgregarSucursal = () => {
           />
           <div className="pt-10 pl-20 bg-gris-claro p-4 max-md:flex max-md:flex-col max-md:justify-center max-md:pl-0 max-md:items-center max-md:pt-0 max-md:p-3 ">
             <img
-              src="../../../../img/Agregar Sucursal.svg"
+              src="../../../../img/AgregarSucursal.svg"
               className="h-5 max-md:mt-5"
             />
             <div className="grid grid-cols-2 max-md:grid-cols-1">
