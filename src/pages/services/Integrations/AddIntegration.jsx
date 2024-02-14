@@ -14,7 +14,7 @@ export const AddIntegration = () => {
   };
 
   return (
-    <div className="containerHome max-md:align-middle flex items-stretch max-lg:flex-col">
+    <div className="containerHome max-md:items-center flex items-stretch max-lg:flex-col w-full">
       <Sidebar />
       <BurguerNav />
       <div className="container p-5">
@@ -26,7 +26,9 @@ export const AddIntegration = () => {
           funcionBoton={"Crear nueva sucursal"}
           funcionButtonAtras={handleReturn}
         />
-        <ConectSocialM />
+        <div className="mx-auto max-w-screen-lg">
+          <ConectSocialM />
+        </div>
       </div>
     </div>
   );

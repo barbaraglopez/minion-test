@@ -19,6 +19,11 @@ export const ConectSocialM = () => {
   const [nombreBot, setNombreBot] = useState('');
   const [url, setUrl] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [estadoBot, setEstadoBot] = useState({
+    appUptime: null,
+    whatsappConnectionStatus: null,
+    whatsappUptime: null,
+  });
 
   const modalExitosa = {
     icono: "../../../../../img/Modal_icono_ok.svg",
@@ -40,9 +45,20 @@ export const ConectSocialM = () => {
   const cerrarModal = () => {
     setModalOpen(false);
   }
+     const fetchEstadoDelBot = () => {
+      axios.get(`${BASE_URL}/info`)
+      .then(response =>{
+        setEstadoBot(response.data);
+      }).catch (error=> {
+         console.error("Error al traer el estado del bot: ", error);
+     });
+    }
+
 
   useEffect(() => {
     const fetchQRCode = () => {
+      fetchEstadoDelBot();
+
       axios.get(`${BASE_URL}/qr-code`)
         .then(response => {
           setQr(response.data); // Asumiendo que la respuesta es una cadena base64 de la imagen
@@ -132,7 +148,7 @@ export const ConectSocialM = () => {
 
 
   return (
-    <div className="bg-gris-claro flex justify-center font-medium">
+    <div className="bg-gris-claro flex justify-center font-medium w-full">
       <Modal
         handleBotonModal={cerrarModal}
         handleCerrar={cerrarModal}
@@ -142,44 +158,79 @@ export const ConectSocialM = () => {
         isOpen={modalOpen}
       />
       <div className="p-10 flex flex-col">
-        <img src="../../../img/Agregar_whatsapp.svg" className="h-6 mb-3" alt="Agregar WhatsApp" />
-        <div className="grid grid-cols-2 gap-10 p-6 max-sm:flex-col max-sm:flex">
+        <img
+          src="../../../img/Agregar_whatsapp.svg"
+          className="h-6 mb-3"
+          alt="Agregar WhatsApp"
+        />
+        <div
+          className={`bg-gris-claro flex justify-center font-medium w-full ${
+            qr === "" ? "grid-cols-1" : "grid-cols-2"
+          }`}
+        >
           <div className="flex justify-center p-1 container">
-            {qr && <img src={qr} className="container-qr-imagen" alt="QR Code" />}
+            {estadoBot.whatsappConnectionStatus !== "Conectado" && qr && (
+              <img src={qr} className="container-qr-imagen" alt="QR Code" />
+            )}
           </div>
+
           <div className="flex flex-col justify-center p-1">
-            <div className='flex flex-col'>
-    
-                <p>{`${profilename}`}</p>
-                <input
-                  name="name"
-                  type="name"
-                  value={nombreBot}
-                  onChange={handleChange}
-                  className="mt-2 input" placeholder="Carlos Sanchez" />
-              <button onClick={() => sendData('BOT_WA_PROFILE_NAME',nombreBot)} className="boton-primario text-xs p-2 h-9 w-32 mt-2 rounded-md">Cambiar nombre</button>
+            <div className="flex flex-col">
+              <p>{`${profilename}`}</p>
+              <input
+                name="name"
+                type="name"
+                value={nombreBot}
+                onChange={handleChange}
+                className="mt-2 input"
+                placeholder="Carlos Sanchez"
+              />
+              <button
+                onClick={() => sendData("BOT_WA_PROFILE_NAME", nombreBot)}
+                className="boton-primario text-xs p-2 h-9 w-32 mt-2 rounded-md"
+              >
+                Cambiar nombre
+              </button>
             </div>
             <div className="flex justify-center flex-col mt-2">
-              <p>Foto del bot</p>
-              <div className="flex justify-center items-center mt-2 container">
-                {picture && <img src={picture} alt="Foto del bot" className='imagen'/>}
-                <button onClick={toggleVisibility} className="boton-primario h-9 ml-3 text-xs p-2 rounded-md">Cambiar foto</button>
+              <p className="font-bold text-lg">Foto del bot : </p>
+              <div className="flex flex-col justify-between mt-2 container">
+                {picture && (
+                  <img
+                    src={picture}
+                    alt="Foto del bot"
+                    className="imagen mb-3"
+                  />
+                )}
+                <button
+                  onClick={toggleVisibility}
+                  className="boton-primario h-9 text-xs p-2 rounded-md w-full"
+                >
+                  Cambiar foto
+                </button>
               </div>
             </div>
             <div>
-              <div className={`${isVisible ? 'visible' : 'invisible'} mt-5`}>
-                <p className='mb-2'>Ingresa la url de tu imagen aqui debajo</p>
+              <div className={`${isVisible ? "visible" : "invisible"} mt-5`}>
+                <p className="mb-2">Ingresa la url de tu imagen aqui debajo</p>
                 <input
-                 name="url"
-                 type="url"
-                 value={url}
-                 onChange={handleChange2}
-                 placeholder='URL' className='input'/>
-                <button onClick={() => sendData('BOT_WA_PROFILE_PIC',url)} className="boton-primario h-9 ml-3 text-xs p-2 rounded-md">Enviar</button>
+                  name="url"
+                  type="url"
+                  value={url}
+                  onChange={handleChange2}
+                  placeholder="URL"
+                  className="input"
+                />
+                <button
+                  onClick={() => sendData("BOT_WA_PROFILE_PIC", url)}
+                  className="boton-primario h-9 ml-3 text-xs p-2 rounded-md"
+                >
+                  Enviar
+                </button>
               </div>
             </div>
             <div>
-              <p className="mt-2">Estado del perfil : </p>
+              <p className="mt-2 font-bold text-lg">Estado del perfil : </p>
               <p>{`${profilestatus}`}</p>
             </div>
           </div>
@@ -187,6 +238,6 @@ export const ConectSocialM = () => {
       </div>
     </div>
   );
-};
+  };
 
 
