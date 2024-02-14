@@ -11,7 +11,7 @@ export const Configuraciones = () => {
   return (
     <>
       <BurguerNav />
-      <div className="homeContainer max-md:align-middle flex items-stretch max-lg:flex-col">
+      <div className="containerHome max-md:align-middle flex items-stretch max-lg:flex-col">
         <Sidebar />
         <div className="lg:container p-5 flex flex-col">
           <Navbar
@@ -30,7 +30,7 @@ export const Configuraciones = () => {
               {" "}
               <EstadoBot />
             </div>
-            <div className="bg-gris-claro containerDivs rounded-md max-lg:h-auto max-lg:mb-5 max-lg:h-full">
+            <div className="bg-gris-claro containerDivs rounded-md max-lg:mb-5 max-lg:h-full">
               <ControlBot />
             </div>
           </div>

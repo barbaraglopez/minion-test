@@ -15,7 +15,7 @@ export const OpenAI =()=>{
     return (
       <>
         <BurguerNav />
-        <div className="homeContainer max-md:align-middle flex items-stretch max-lg:flex-col">
+        <div className="containerHome max-md:align-middle flex items-stretch max-lg:flex-col">
           <Sidebar />
           <div className="lg:container p-5 flex-col">
             <Navbar
@@ -24,9 +24,9 @@ export const OpenAI =()=>{
               displayButton={"hidden"}
               funcionButtonAtras={handleReturn}
             />
-            <div className="grid grid-cols-1 gap-20 p-16 h-80 max-md:grid-cols-1">
-              <SelectorModeloOpenAI/>
-              <ConfigurarAPIKey/>
+            <div className="grid grid-cols-1 gap-20 p-5 h-auto max-md:grid-cols-1 bg-gris-claro">
+              <SelectorModeloOpenAI />
+              <ConfigurarAPIKey />
             </div>
           </div>
         </div>

@@ -173,7 +173,7 @@ export const Prompts = () => {
       ) : (
         <></>
       )}
-      <div className="homeContainer flex items-stretch max-lg:flex-col">
+      <div className="containerHome flex items-stretch max-lg:flex-col">
         <Modal
           handleBotonModal={handleModal}
           handleCerrar={cerrarModal}

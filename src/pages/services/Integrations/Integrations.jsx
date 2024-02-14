@@ -8,7 +8,7 @@ import { SocialMedia } from "../../../components/SocialMedia/SocialMedia";
 export const Integrations = () => {
   const navigate = useNavigate();
 
-  const handleReturn = (param) => {
+  const handleReturn = () => {
     navigate("/integraciones");
   };
 
@@ -19,7 +19,7 @@ export const Integrations = () => {
   return (
     <>
       <BurguerNav />
-      <div className="homeContainer max-md:align-middle flex items-stretch max-lg:flex-col">
+      <div className="max-md:align-middle flex items-stretch max-lg:flex-col">
         <Sidebar />
         <div className="lg:container p-5 flex-col">
           <Navbar
@@ -39,11 +39,11 @@ export const Integrations = () => {
             <div className="integrations-sub-div">
               <img
                 src="../../../../img/openai.png"
-                className="ml-4 max-sm:h-10 h-9"
+                className="ml-4 max-md:h-6 max-md:w-32 h-9"
               />
               <button
                 onClick={() => accessToOpenAI()}
-                className="boton-large boton-primario button-socialmedia max-sm:h-7"
+                className="boton-large boton-primario button-socialmedia max-lg:w-20"
               >
                 Acceder
               </button>

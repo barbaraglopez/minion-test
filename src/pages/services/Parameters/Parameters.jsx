@@ -108,7 +108,7 @@ export const Parameters = () => {
     }
 
   return (
-    <div className="max-md:align-middle flex items-stretch max-lg:flex-col homeContainer">
+    <div className="max-md:align-middle flex items-stretch max-lg:flex-col containerHome">
       <Sidebar />
       <BurguerNav />
       {modalPrivacidadPrompts ? (
@@ -145,13 +145,13 @@ export const Parameters = () => {
       ) : (
         <></>
       )}
-      <div className="container p-5">
+      <div className="containerHome container-div">
         <Navbar
           imagen={"../../../../img/parametros-title.PNG"}
           displayInput={"hidden"}
           displayButton={"hidden"}
           nombre={"Sara Hebe"}
-          funcionBoton={"Crear nueva sucursal"}
+          displayButtonAtras={"hidden"}
         />
         <div className="containerInfo h-full w-full p-3">
           <div className="bg-white p-6 h-full">

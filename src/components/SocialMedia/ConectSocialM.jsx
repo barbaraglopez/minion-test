@@ -132,7 +132,7 @@ export const ConectSocialM = () => {
 
 
   return (
-    <div className="bg-gris-claro flex justify-center font-medium max-sm:h-full homeContainer">
+    <div className="bg-gris-claro flex justify-center font-medium">
       <Modal
         handleBotonModal={cerrarModal}
         handleCerrar={cerrarModal}

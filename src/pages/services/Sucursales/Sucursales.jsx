@@ -49,7 +49,7 @@ export const Sucursales = () => {
       <BurguerNav />
       <div className="homeContainer flex items-stretch">
         <Sidebar />
-        <div className="coontainer p-5">
+        <div className="container p-5">
           <Navbar
             imagen={"../../../../img/Sucursales.svg"}
             displayButtonAtras={"hidden"}
@@ -57,7 +57,7 @@ export const Sucursales = () => {
             funcionButton={"Agregar sucursal"}
             eventoFuncion={handleAgregar}
           />
-          <div className="main-container pl-10">
+          <div className="main-container pl-10 overflow-x-scroll">
             <div className="my-cols column-titles grid grid-cols-8 mb-8">
               <div className="column-nom w-40 max-xl:w-20">
                 <b>Nombre</b>

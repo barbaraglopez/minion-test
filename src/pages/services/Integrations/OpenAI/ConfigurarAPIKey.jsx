@@ -108,22 +108,22 @@ export const ConfigurarAPIKey = () => {
       <div>
         <img
           src={"../../../../img/Configurar_API_Key.svg"}
-          className="p-5"
+          className="p-5 max-sm:p-0 max-sm:mb-3"
           alt="Configurar API Key"
         />
         <div>
-          <p className="text-lg pl-5">Nueva API Key</p>
+          <p className="text-lg pl-5 max-sm:pl-0">Nueva API Key</p>
           <input
             name="name"
             type="name"
             value={valorInput}
             onChange={handleChange}
-            className="w-full pl-2 ml-5"
+            className="w-full pl-2 max-sm:ml-0 ml-5 max-sm:pl-0"
             placeholder="EJEMPLO: AKHFBEOAUBF51655"
           />
         </div>
       </div>
-      <div className="mt-14 pl-5 flex gap-2">
+      <div className="mt-14 pl-5 max-sm:pl-0 flex gap-2">
         <button
           onClick={() => sendData()}
           className="boton-large boton-primario"

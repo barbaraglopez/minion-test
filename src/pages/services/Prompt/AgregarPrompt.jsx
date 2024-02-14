@@ -94,7 +94,7 @@ export const AgregarPrompt = () => {
   return (
     <>
       <BurguerNav />
-      <div className="homeContainer flex max-lg:flex-col items-stretch">
+      <div className="containerHome flex max-lg:flex-col items-stretch">
         <Modal
           handleBotonModal={handleReturn}
           handleCerrar={cerrarModal}
@@ -119,7 +119,7 @@ export const AgregarPrompt = () => {
                 className="h-5 max-lg:mb-2"
               />
             </div>
-            <div className="grid grid-cols-2 gap-10 p-5 items-center justify-center max-xl:grid-cols-1 bg-gris-claro p-5">
+            <div className="grid grid-cols-2 gap-10 p-5 items-center justify-center max-xl:grid-cols-1 bg-gris-claro">
               <div className="containerLabelInput">
                 <label>Nombre</label>
                 <div className="">

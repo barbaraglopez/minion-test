@@ -73,7 +73,7 @@ export const SelectorModeloOpenAI = () => {
       />
       <img
         src="../../../../img/Selector_del_modelo_OpenAi.svg"
-        className="p-6"
+        className="p-6 max-sm:p-0 max-sm:mb-3"
       />
       <div className="containerLabelInput mb-3">
         <p className="text-lg">Elije un modelo</p>
@@ -94,7 +94,7 @@ export const SelectorModeloOpenAI = () => {
             </label>
             <button
               onClick={() => sendData()}
-              className="boton-primario w-64 text-sm p-2 mt-4 rounded-md font-semibold"
+              className="boton-primario w-full text-sm p-2 mt-4 rounded-md font-semibold max-sm:p-1"
             >
               Actualizar modelo
             </button>

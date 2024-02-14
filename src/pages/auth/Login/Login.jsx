@@ -44,7 +44,7 @@ export const Login = () => {
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm form">
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm form max-md:w-60 max-md:flex max-md:items-center">
           <form
             onSubmit={login}
             className="space-y-6 w-96 labelContainer"
@@ -81,7 +81,7 @@ export const Login = () => {
                   Contraseña
                 </label>
               </div>
-              <div className="mt-2 mr-3">
+              <div className="mt-2">
                 <input
                   id="password"
                   name="password"

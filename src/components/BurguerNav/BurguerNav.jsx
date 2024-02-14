@@ -9,7 +9,7 @@ export const BurguerNav = () => {
      {
        title: "Home",
        url: "/home",
-       icon: "/img/Settings.svg",
+       icon: "/img/Home.svg",
      },
      {
        title: "Chats",
@@ -32,14 +32,14 @@ export const BurguerNav = () => {
        icon: "/img/Vector.svg",
      },
      {
-       title: "Cerrar sesion",
-       url: "/login",
-       icon: "/img/Logout.svg",
-     },
-     {
        title: "Parametros",
        url: "/parametros",
        icon: "/img/Settings.svg",
+     },
+     {
+       title: "Cerrar sesion",
+       url: "/login",
+       icon: "/img/Logout.svg",
      },
    ];
 
@@ -103,9 +103,9 @@ export const BurguerNav = () => {
                     key={index}
                     onClick={() => navigate(menu.url)}
                     className="border-b border-gray-400 my-8 uppercase justify-center flex bg-slate-100 h-12 mt-2 items-center rounded-xl hover:bg-slate-200 hover:cursor-pointer">
-                    <div className='iconContainer'>
+                    <div className=''>
                       <img
-                        src={menu.icon} className='ml-4 mr-2'/>
+                        src={menu.icon} className='ml-4 mr-2 icon'/>
                     </div>
                     <div className='mr-5'>{menu.title}</div>
                   </li>
