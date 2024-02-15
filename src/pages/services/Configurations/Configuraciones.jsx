@@ -15,7 +15,7 @@ export const Configuraciones = () => {
         <Sidebar />
         <div className="lg:container p-5 flex flex-col">
           <Navbar
-            imagen={"../../../../img/Configuraciones.svg"}
+            imagen={"../../../../img/HomeTitle.PNG"}
             displayInput={"hidden"}
             displayButton={"hidden"}
             displayButtonAtras={"hidden"}

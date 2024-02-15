@@ -5,26 +5,54 @@ export const EstadoBot = () => {
   const BASE_URL = "https://bot.yappastore.com";
 
   const [estadoBot, setEstadoBot] = useState({
-    appUptime: null,
     whatsappConnectionStatus: null,
-    whatsappUptime: null,
+    appUptimeSeconds: 0, // Almacenaremos el uptime en segundos para facilitar los cálculos
+    whatsappUptimeSeconds: 0,
   });
+
+  // Convertir el tiempo en formato HH:MM:SS a segundos
+  const uptimeToSeconds = (uptime) => {
+    const [hours, minutes, seconds] = uptime.split(":").map(Number);
+    return hours * 3600 + minutes * 60 + seconds;
+  };
 
   useEffect(() => {
     const fetchEstadoDelBot = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/info`);
-        setEstadoBot(response.data);
+        const { data } = await axios.get(`${BASE_URL}/info`);
+        setEstadoBot({
+          whatsappConnectionStatus: data.whatsappConnectionStatus,
+          appUptimeSeconds: uptimeToSeconds(data.appUptime),
+          whatsappUptimeSeconds: uptimeToSeconds(data.whatsappUptime),
+        });
       } catch (error) {
         console.error("Error al traer el estado del bot: ", error);
       }
     };
+
     fetchEstadoDelBot();
+
+    // Establecer un intervalo para incrementar el uptime cada segundo
+    const intervalId = setInterval(() => {
+      setEstadoBot((currentState) => ({
+        ...currentState,
+        appUptimeSeconds: currentState.appUptimeSeconds + 1,
+        whatsappUptimeSeconds: currentState.whatsappUptimeSeconds + 1,
+      }));
+    }, 1000); // Incrementa los contadores cada segundo
+
+    return () => clearInterval(intervalId); // Limpiar el intervalo al desmontar el componente
   }, []);
 
-  const updateInfo = () =>{
-    window.location.reload();
-  }
+  // Convertir segundos a formato HH:MM:SS para mostrar
+  const formatUptime = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const sec = seconds % 60;
+    return [hours, minutes, sec]
+      .map((v) => v.toString().padStart(2, "0"))
+      .join(":");
+  };
 
   return (
     <>
@@ -42,20 +70,17 @@ export const EstadoBot = () => {
             </div>
             <div>
               <span className="font-semibold">Tiempo de conexion del Bot:</span>{" "}
-              {estadoBot.appUptime}
+              {formatUptime(estadoBot.appUptimeSeconds)}
             </div>
             {estadoBot.whatsappConnectionStatus === "Conectado" && (
               <div>
                 <span className="font-semibold">
                   Tiempo de conexión del Bot a Whatsapp:
                 </span>{" "}
-                {estadoBot.whatsappUptime}
+                {formatUptime(estadoBot.whatsappUptimeSeconds)}
               </div>
             )}
           </div>
-          <button onClick={()=>updateInfo()} className="boton-primario p-1 rounded-md">
-            Actualizar informacion
-          </button>
         </div>
       </div>
     </>

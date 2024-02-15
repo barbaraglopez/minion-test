@@ -11,7 +11,7 @@ export const Sidebar = () => {
       {
         title: "Home",
         url: "/home",
-        icon: "/img/Settings.svg",
+        icon: "/img/Home.svg",
       },
       {
         title: "Chats",
