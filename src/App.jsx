@@ -14,6 +14,7 @@ import { AddIntegration } from "./pages/services/Integrations/AddIntegration.jsx
 import { AgregarSucursal } from "./pages/services/Sucursales/AgregarSucursal.jsx";
 import {Parameters} from './pages/services/Parameters/Parameters.jsx'
 import {OpenAI} from "./pages/services/Integrations/OpenAI/OpenAI.jsx"
+import {MessageDetail} from "./components/Menssages/MessageDetail"
 
 function App() {
   return (
@@ -21,7 +22,6 @@ function App() {
       <AppProvider>
         <Routes>
           {/*Ingreso de usuario*/}
-          <Route path="/chatswhatsapp" element={<ChatsWhatsApp />} />
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
 
@@ -46,6 +46,10 @@ function App() {
           <Route path="/addintegrations" element={<AddIntegration />} />
           <Route path="/conectsocialmedia" element={<ConectSocialM />} />
           <Route path="/openAI" element={<OpenAI />} />
+
+          {/*Chats*/}
+          <Route path="/chats/:id" element={<MessageDetail />} />
+          <Route path="/chatswhatsapp" element={<ChatsWhatsApp />} />
         </Routes>
       </AppProvider>
     </main>
